@@ -1,0 +1,9 @@
+!.gitkeep
+bower_components/
+node_modules/
+tmp/
+typings/
+**/*.log
+**/*.swp
+**/*.tgz
+.DS_Store
