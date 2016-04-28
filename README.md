@@ -1,4 +1,6 @@
 # cryptobox
+
+[![Join the chat at https://gitter.im/ZenyWay/cryptobox](https://badges.gitter.im/ZenyWay/cryptobox.svg)](https://gitter.im/ZenyWay/cryptobox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 zero-knowledge, offline-first, replicating, distributed document storage for web, mobile, desktop and node apps
 
 # specification
