@@ -2,7 +2,7 @@
 zero-knowledge, offline-first, replicating, distributed document storage for web, mobile, desktop and node apps
 
 # specification
-see the [specification sheet](./cryptobox-specification.ods) in this repository
+see the [wiki](https://github.com/ZenyWay/cryptobox/wiki) and [specification sheet](./cryptobox-specification.ods) in this repository.
 
 # LICENSE
 Copyright 2016 Stéphane M. Catala
