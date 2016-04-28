@@ -1,31 +1,37 @@
 {
   "name": "cryptobox",
-  "version": "0.0.0",
-  "description": "encrypted synchronizable storage",
+  "version": "0.0.2",
+  "description": "zero-knowledge, offline-first, replicating, distributed document storage for web, mobile, desktop and node apps",
   "main": "index.js",
   "scripts": {
     "test": "jasmine"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bzb-stcnx/cryptobox.git"
+    "url": "git+https://github.com/zenyway/cryptobox.git"
   },
   "keywords": [
+    "zero-knowledge",
     "crypto",
     "webcrypto",
     "openpgp",
+    "offline-first",
     "pouchdb",
     "couchdb",
     "replication",
     "sync",
+    "synchronization",
     "browserify"
   ],
-  "author": "bzb-stcnx",
+  "author": {
+    "name": "Stephane M. Catala",
+    "email": "stephane@zenyway.com"
+  },
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/bzb-stcnx/cryptobox/issues"
+    "url": "https://github.com/zenyway/cryptobox/issues"
   },
-  "homepage": "https://github.com/bzb-stcnx/cryptobox#readme",
+  "homepage": "https://github.com/zenyway/cryptobox#readme",
   "dependencies": {
   },
   "devDependencies": {
