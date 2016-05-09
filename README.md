@@ -1,10 +1,14 @@
 # cryptobox
 
 [![Join the chat at https://gitter.im/ZenyWay/cryptobox](https://badges.gitter.im/ZenyWay/cryptobox.svg)](https://gitter.im/ZenyWay/cryptobox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 zero-knowledge, offline-first, replicating, distributed document storage for web, mobile, desktop and node apps
 
 # specification
 see the [wiki](https://github.com/ZenyWay/cryptobox/wiki) and [specification sheet](./cryptobox-specification.ods) in this repository.
+
+# contributing
+see the [contribution guidelines](./CONTRIBUTING.md)
 
 # LICENSE
 Copyright 2016 Stéphane M. Catala
