@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<testsuite name="Chromium 50.0.2661 (Ubuntu 0.0.0)" package="unit" timestamp="2016-06-02T23:19:40" id="0" hostname="ASPIRE-E1-510" tests="1" errors="0" failures="0" time="0.007">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/50.0.2661.102 Chrome/50.0.2661.102 Safari/537.36"/>
+  </properties>
+  <testcase name="cryptobox module exports a function" time="0.007" classname="Chromium_50_0_2661_(Ubuntu_0_0_0).unit.cryptobox module"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
