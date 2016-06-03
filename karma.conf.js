@@ -3,7 +3,13 @@ module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: [ 'browserify', 'jasmine' ], // include browserify first
-    browsers: ['Chrome' /*, 'Firefox' */ ],
+    browsers: [ process.env.TRAVIS ? 'Chrome--no-sandbox' : 'Chrome' /*, 'Firefox' */ ],
+    customLaunchers: {
+      'Chrome--no-sandbox': { // TravisCI
+        base: 'Chrome',
+        flags: [ '--no-sandbox' ]
+      }
+    },
     files: [ 'spec/**/*.js', 'spec/**/*.ts' ],
     autoWatch: true,
     singleRun: true,
