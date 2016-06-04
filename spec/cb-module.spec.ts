@@ -14,7 +14,7 @@
  * Limitations under the License.
  */
 
-import factory from "../src"
+import factory from '../src'
 
 describe('cryptobox module', function () {
   it('exports a function', function () {
