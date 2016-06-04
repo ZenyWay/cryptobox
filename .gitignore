@@ -1,9 +1,12 @@
 !.gitkeep
 bower_components/
+dist/
 node_modules/
+spec/reports/
 tmp/
 typings/
 **/*.log
 **/*.swp
 **/*.tgz
 .DS_Store
+.vscode/

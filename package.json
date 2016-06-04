@@ -2,9 +2,15 @@
   "name": "cryptobox",
   "version": "0.0.2",
   "description": "zero-knowledge, offline-first, replicating, distributed document storage for web, mobile, desktop and node apps",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "jasmine"
+    "prebuild": "mkdirp dist && rimraf dist/*",
+    "build": "cpx src/**/*.ts dist && tsc -p src --outDir dist",
+    "postinstall": "typings install",
+    "pretest": "mkdirp spec/reports && rimraf spec/reports/*",
+    "test": "karma start --single-run",
+    "test:coverage": "npm run test && remap-istanbul -i spec/reports/coverage/chrom*/coverage.json -o spec/reports/coverage -t html && http-server -c-1 -o -p 8888 spec/reports/coverage",
+    "typings": "typings"
   },
   "repository": {
     "type": "git",
@@ -20,8 +26,7 @@
     "couchdb",
     "replication",
     "sync",
-    "synchronization",
-    "browserify"
+    "synchronization"
   ],
   "author": {
     "name": "Stephane M. Catala",
@@ -32,9 +37,31 @@
     "url": "https://github.com/zenyway/cryptobox/issues"
   },
   "homepage": "https://github.com/zenyway/cryptobox#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "jasmine": "^2.4.1"
+    "browserify": "^13.0.1",
+    "browserify-istanbul": "^2.0.0",
+    "concurrently": "^2.1.0",
+    "cpx": "^1.3.1",
+    "eslint": "^2.11.1",
+    "http-server": "^0.9.0",
+    "istanbul": "^0.4.3",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.5",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-jasmine-html-reporter": "^0.2.0",
+    "karma-junit-reporter": "^1.0.0",
+    "karma-spec-reporter": "0.0.26",
+    "mkdirp": "^0.5.1",
+    "remap-istanbul": "^0.6.4",
+    "rimraf": "^2.5.2",
+    "tsify": "^0.16.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4",
+    "watchify": "^3.7.0"
   }
 }

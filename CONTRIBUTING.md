@@ -78,6 +78,11 @@ and/or [screencasts](https://github.com/colinkeenan/silentcast).
 ```
 
 ## <a name="submit"></a> Code submission process
+### Typescript
+Code can be anywhere between pure JS and full [TypeScript](http://www.typescriptlang.org/),
+with JS being any version supported by [TypeScript](http://www.typescriptlang.org/).
+Exported code is ES5 [CommonJS](http://www.commonjs.org/).
+
 ### Forked public project
 Contributions follow the [forked public project](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#Forked-Public-Project) model.
 
@@ -108,3 +113,11 @@ https://github.com/ZenyWay/cryptobox/blob/master/ICLA.
 This is required both in the contributor's own interest,
 and that of the community relying on this project,
 as it clarifies the conditions under which the contribution is made.
+
+### Test suite
+This project's test suite builds on a [Karma](https://karma-runner.github.io/)/[Jasmine](https://jasmine.github.io/) test framework.
+The [Karma](https://karma-runner.github.io/) test runner supports testing in multiple browsers: Chrome, FireFox, Safari, etc.
+
+[CommonJS](http://www.commonjs.org/) dependencies are bundled with [Browserify](http://browserify.org/) for the browser.
+
+CI testing runs on [TravisCI](https://travis-ci.org/ZenyWay/cryptobox).

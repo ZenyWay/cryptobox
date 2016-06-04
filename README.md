@@ -1,16 +1,26 @@
 # cryptobox
-
+[![build status](https://travis-ci.org/ZenyWay/cryptobox.svg?branch=master)](https://travis-ci.org/ZenyWay/cryptobox)
 [![Join the chat at https://gitter.im/ZenyWay/cryptobox](https://badges.gitter.im/ZenyWay/cryptobox.svg)](https://gitter.im/ZenyWay/cryptobox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 zero-knowledge, offline-first, replicating, distributed document storage for web, mobile, desktop and node apps
 
-# specification
+* [Specification](#spec)
+* [Contributing](#contrib)
+* [Support enquiries](#support)
+* [License](#license)
+
+# <a name="spec"></a> specification
 see the [wiki](https://github.com/ZenyWay/cryptobox/wiki) and [specification sheet](./cryptobox-specification.ods) in this repository.
 
-# contributing
+# <a name="contrib"></a> contributing
 see the [contribution guidelines](./CONTRIBUTING.md)
 
-# LICENSE
+# <a name="support"></a> support enquiries
+Please address all support enquiries over the dedicated
+[CryptoBox Gitter channel](https://gitter.im/ZenyWay/cryptobox).
+
+
+# <a name="license"></a> LICENSE
 Copyright 2016 Stéphane M. Catala
 
 Licensed under the Apache License, Version 2.0 (the "License");
