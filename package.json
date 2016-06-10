@@ -37,7 +37,9 @@
     "url": "https://github.com/zenyway/cryptobox/issues"
   },
   "homepage": "https://github.com/zenyway/cryptobox#readme",
-  "dependencies": {},
+  "dependencies": {
+    "object-assign": "^4.1.0"
+  },
   "devDependencies": {
     "browserify": "^13.0.1",
     "browserify-istanbul": "^2.0.0",
