@@ -21,18 +21,17 @@ import assign = require('object-assign')
  * @param {url: string, id: string} config
  * @return {Cryptoboxes}
  * @throws Error 'invalid credentials' when
- * - creds is not a valid credentials object
+ * - creds is not a valid credentials object {url: string, id: string}
  * - or a cryptobox instance already exists for the given creds.id
  */
 export default function getFactory (config: Config): Cryptoboxes {
-  if (!config || (typeof config.url !== 'string')
-  || (typeof config.agent !== 'string')) {
+  if (!isConfig(config)) {
     throw new Error('invalid argument')
   }
 
   return Cryptobox.prototype.cryptoboxes = Object.freeze({
-    create: create,
-    access: access,
+    create: Cryptobox,
+    access: getCryptobox,
     config: Object.freeze(assign({}, config)) // defensive copy
   })
 }
@@ -68,8 +67,8 @@ let _pool = Object.create(null) // TODO should be local pouchdb instances
  * - creds is not a valid credentials object
  * - or a cryptobox instance already exists for the given creds.id
  */
-function create (creds: Creds): Cryptobox {
-  if (!isValidType(creds) || (creds.id in _pool)) {
+function Cryptobox (creds: Creds): Cryptobox {
+  if (!isCreds(creds) || (creds.id in _pool)) {
     throw new Error('invalid credentials')
   }
 
@@ -81,7 +80,7 @@ function create (creds: Creds): Cryptobox {
   let cryptobox = Object.freeze(Object.create(Cryptobox.prototype))
 
   _pool[_creds.id] = function access (creds: Creds): Cryptobox {
-    if (!isValidType(creds) || (creds.id !== _creds.id)
+    if (!isCreds(creds) || (creds.id !== _creds.id)
     || (creds.secret !== _creds.hash)) { // TODO SHA256(creds.secret) !== _creds.hash
       throw new TypeError('invalid credentials')
     }
@@ -93,7 +92,6 @@ function create (creds: Creds): Cryptobox {
 
 /**
  * @public
- * @factory
  * @param {id: string, secret: string} creds
  * @return {Cryptobox} for given creds
  * @throws Error 'invalid credentials' when
@@ -101,8 +99,8 @@ function create (creds: Creds): Cryptobox {
  * - or there is no cryptobox instance for the given creds.id
  * - or creds does not match that of the corresponding cryptobox instance
  */
-function access (creds: Creds): Cryptobox {
-  if (!isValidType(creds) || !(creds.id in _pool)) {
+function getCryptobox (creds: Creds): Cryptobox {
+  if (!isCreds(creds) || !(creds.id in _pool)) {
     throw new Error('invalid credentials')
   }
 
@@ -114,16 +112,17 @@ function access (creds: Creds): Cryptobox {
  * @param {id: string, secret: string} creds
  * @return {boolean} true if creds is a valid credentials object
  */
-function isValidType(creds: Creds) {
+function isCreds(creds: any): creds is Creds {
   return creds && (typeof creds.id === 'string')
     && (typeof creds.secret === 'string')
 }
 
 /**
  * @private
- * @constructor
- * @throws Error 'Unauthorized' when called
+ * @param {url: string, id: string} config
+ * @return {boolean} true if config is a valid Config object
  */
-function Cryptobox () {
-  throw new Error('Unauthorized')
+function isConfig(config: any): config is Config {
+  return config && (typeof config.url === 'string')
+    && (typeof config.agent === 'string')
 }

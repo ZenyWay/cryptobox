@@ -24,7 +24,7 @@ describe('cryptobox module', function () {
   })
 
   describe('exported function', function () {
-    describe('requires a mandatory config: { url: string, id: string } argument',
+    describe('requires a mandatory config: { url: string, agent: string } argument',
     function () {
       let mandatory: Cb.Config
 
@@ -32,7 +32,7 @@ describe('cryptobox module', function () {
         mandatory = CONFIG
       })
 
-      it('accepts a config: { url: string, id: string } argument', function () {
+      it('accepts a config: { url: string, agent: string } argument', function () {
         expect(() => factory(mandatory)).not.toThrowError()
       })
 
